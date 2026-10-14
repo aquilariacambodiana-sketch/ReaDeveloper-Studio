@@ -1,0 +1,6 @@
+{
+  "name": "REA DEVELOPER STUDIO",
+  "description": "An advanced autonomous multi-agent orchestration, code generation, and cloud workspace builder studio powered by Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

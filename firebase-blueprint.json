@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Developer project workspace",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 500 },
+        "userId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "userId"]
+    },
+    "File": {
+      "title": "File",
+      "description": "Code file in project workspace",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "content": { "type": "string", "maxLength": 50000 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "projectId", "name"]
+    }
+  },
+  "firestore": {
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Developer projects collection"
+    },
+    "/projects/{projectId}/files/{fileId}": {
+      "schema": "File",
+      "description": "Files in project workspace"
+    }
+  }
+}
